@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CarryFast Global Services Pvt. Ltd. | Customs, Freight & Logistics</title>
+<meta name="description" content="CarryFast Global Services Pvt. Ltd. — Licensed Customs House Agent (CHA) offering customs clearance, freight forwarding, bonded warehousing and inland transportation across India.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<!-- If you add a logo.png file next to this HTML file, it will also be used as the browser tab icon. -->
+<link rel="icon" href="logo.png">
+<style>
+  :root{
+    --navy:#0A2540;
+    --navy-deep:#071A2E;
+    --steel:#1B4965;
+    --paper:#EEF1F3;
+    --paper-line:#D7DCE1;
+    --ink:#10202E;
+    --amber:#FF7A29;
+    --amber-dark:#E0621B;
+    --stamp:#C1272D;
+    --white:#FFFFFF;
+    --font-display:'Archivo Black', sans-serif;
+    --font-head:'Archivo', sans-serif;
+    --font-body:'IBM Plex Sans', sans-serif;
+    --font-mono:'IBM Plex Mono', monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:var(--font-body);
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.5;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none;}
+  img,svg{display:block;max-width:100%;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 28px;}
+  .eyebrow{
+    font-family:var(--font-mono);
+    font-size:12.5px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--amber-dark);
+    display:flex;align-items:center;gap:10px;
+    margin-bottom:14px;
+  }
+  .eyebrow::before{content:"";width:22px;height:2px;background:var(--amber);display:inline-block;}
+  h1,h2,h3{font-family:var(--font-head);font-weight:800;color:var(--navy);line-height:1.08;}
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+
+  /* ===== NAV ===== */
+  header{
+    position:sticky;top:0;z-index:100;
+    background:rgba(238,241,243,.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--paper-line);
+  }
+  nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0;}
+  .brand{display:flex;align-items:center;gap:12px;}
+  .brand-mark{
+    width:42px;height:42px;border-radius:8px;
+    background:var(--navy);
+    display:flex;align-items:center;justify-content:center;
+    flex-shrink:0;
+    overflow:hidden;
+  }
+  .brand-mark .brand-logo-img{width:100%;height:100%;object-fit:contain;padding:4px;}
+  .brand-mark .brand-fallback-svg{width:24px;height:24px;display:none;}
+  .brand-mark.fallback .brand-fallback-svg{display:block;}
+  .brand-text{display:flex;flex-direction:column;line-height:1.15;}
+  .brand-text .name{font-family:var(--font-head);font-weight:800;font-size:16.5px;letter-spacing:.01em;color:var(--navy);}
+  .brand-text .sub{font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;color:var(--steel);text-transform:uppercase;}
+  .nav-links{display:flex;align-items:center;gap:34px;}
+  .nav-links a{
+    font-family:var(--font-head);font-weight:600;font-size:14.5px;color:var(--navy);
+    position:relative;padding:4px 0;
+  }
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--amber);transition:width .25s ease;}
+  .nav-links a:hover::after{width:100%;}
+  .btn{
+    font-family:var(--font-head);font-weight:700;font-size:14px;
+    padding:12px 22px;border-radius:6px;border:2px solid transparent;
+    display:inline-flex;align-items:center;gap:8px;cursor:pointer;
+    transition:transform .15s ease, box-shadow .15s ease, background .2s ease;
+  }
+  .btn-primary{background:var(--amber);color:var(--navy-deep);}
+  .btn-primary:hover{background:var(--amber-dark);transform:translateY(-2px);box-shadow:0 8px 20px rgba(255,122,41,.35);}
+  .btn-ghost{border-color:var(--navy);color:var(--navy);background:transparent;}
+  .btn-ghost:hover{background:var(--navy);color:var(--white);transform:translateY(-2px);}
+  .nav-cta{display:flex;align-items:center;gap:14px;}
+  .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:6px;}
+  .burger span{width:24px;height:2px;background:var(--navy);}
+
+  /* ===== HERO ===== */
+  .hero{position:relative;padding:88px 0 40px;overflow:hidden;}
+  .hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;}
+  .doc-frame{
+    border:1.5px solid var(--paper-line);
+    background:var(--white);
+    border-radius:10px;
+    padding:34px 38px;
+    position:relative;
+  }
+  .doc-frame::before{
+    content:"MANIFEST NO. CFG-2026-00931";
+    position:absolute;top:14px;right:20px;
+    font-family:var(--font-mono);font-size:10.5px;color:var(--paper-line);
+    letter-spacing:.08em;
+  }
+  .hero h1{font-family:var(--font-display);font-size:clamp(34px,4.6vw,56px);text-transform:uppercase;letter-spacing:-.01em;}
+  .hero h1 .accent{color:var(--amber);}
+  .hero p.lead{
+    font-size:17px;color:var(--steel);max-width:520px;margin:20px 0 30px;
+  }
+  .hero-cta{display:flex;gap:16px;flex-wrap:wrap;}
+  .hero-meta{
+    display:flex;gap:26px;margin-top:34px;padding-top:24px;border-top:1px dashed var(--paper-line);flex-wrap:wrap;
+  }
+  .hero-meta div{font-family:var(--font-mono);font-size:12px;color:var(--steel);}
+  .hero-meta strong{display:block;font-family:var(--font-head);font-size:15px;color:var(--navy);margin-bottom:2px;}
+
+  /* stamp */
+  .stamp-wrap{display:flex;align-items:center;justify-content:center;position:relative;}
+  .stamp{
+    width:260px;height:260px;
+    animation:stampDown .8s cubic-bezier(.2,1.4,.4,1) .2s both;
+  }
+  @keyframes stampDown{
+    0%{opacity:0;transform:scale(2.4) rotate(-18deg);}
+    60%{opacity:1;}
+    100%{opacity:1;transform:scale(1) rotate(-9deg);}
+  }
+  .route-line{width:100%;margin-top:26px;}
+  .route-line .dash{stroke-dasharray:6 6;animation:dashMove 2.4s linear infinite;}
+  @keyframes dashMove{to{stroke-dashoffset:-48;}}
+
+  /* ===== MARQUEE ===== */
+  .marquee-band{
+    background:var(--navy);color:var(--white);
+    padding:13px 0;overflow:hidden;white-space:nowrap;
+    border-top:1px solid var(--navy-deep);border-bottom:1px solid var(--navy-deep);
+  }
+  .marquee-track{display:inline-flex;gap:40px;animation:scroll 32s linear infinite;}
+  .marquee-track span{
+    font-family:var(--font-mono);font-size:12.5px;letter-spacing:.1em;color:#AFC3D6;
+    display:inline-flex;align-items:center;gap:10px;text-transform:uppercase;
+  }
+  .marquee-track span b{color:var(--amber);}
+  .marquee-track span::after{content:"•";color:#3C5A78;margin-left:30px;}
+  @keyframes scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+  /* ===== TRUST STATS ===== */
+  .stats{padding:56px 0;background:var(--white);border-bottom:1px solid var(--paper-line);}
+  .stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+  .stat b{font-family:var(--font-mono);font-size:clamp(26px,3vw,36px);color:var(--navy);display:block;}
+  .stat span{font-size:13px;color:var(--steel);}
+
+  /* ===== SECTION shared ===== */
+  section{padding:96px 0;}
+  .sec-head{max-width:640px;margin-bottom:52px;}
+  .sec-head h2{font-size:clamp(28px,3.4vw,40px);}
+  .sec-head p{color:var(--steel);margin-top:14px;font-size:16px;}
+
+  /* ===== SERVICES (manifest table) ===== */
+  .manifest{border:1.5px solid var(--navy);border-radius:10px;overflow:hidden;background:var(--white);}
+  .m-row{
+    display:grid;grid-template-columns:120px 1fr 1.3fr 90px;
+    align-items:center;gap:24px;
+    padding:26px 30px;border-bottom:1px solid var(--paper-line);
+    transition:background .2s ease;
+  }
+  .m-row:last-child{border-bottom:none;}
+  .m-row:hover{background:var(--paper);}
+  .m-head{
+    background:var(--navy);color:var(--white);
+    font-family:var(--font-mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+    padding:16px 30px;
+  }
+  .m-code{font-family:var(--font-mono);font-weight:600;color:var(--amber-dark);font-size:14px;}
+  .m-name{font-family:var(--font-head);font-weight:700;font-size:17px;color:var(--navy);}
+  .m-desc{color:var(--steel);font-size:14.5px;}
+  .m-icon{
+    width:44px;height:44px;border-radius:8px;background:var(--paper);
+    display:flex;align-items:center;justify-content:center;
+    justify-self:end;
+  }
+  .m-icon svg{width:22px;height:22px;stroke:var(--navy);}
+
+  /* ===== PROCESS (legit sequence) ===== */
+  .process-wrap{background:var(--navy);border-radius:14px;padding:56px 46px;color:var(--white);position:relative;overflow:hidden;}
+  .process-wrap .sec-head h2, .process-wrap .sec-head p{color:var(--white);}
+  .process-wrap .sec-head p{color:#AFC3D6;}
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;}
+  .steps::before{
+    content:"";position:absolute;top:24px;left:6%;right:6%;height:1px;
+    background:repeating-linear-gradient(90deg,#3C5A78 0 10px,transparent 10px 18px);
+  }
+  .step{position:relative;padding-right:20px;}
+  .step .num{
+    font-family:var(--font-mono);font-size:13px;color:var(--amber);
+    width:48px;height:48px;border:1.5px solid var(--amber);border-radius:50%;
+    display:flex;align-items:center;justify-content:center;background:var(--navy);
+    position:relative;z-index:2;margin-bottom:20px;
+  }
+  .step h3{color:var(--white);font-family:var(--font-head);font-size:17px;margin-bottom:8px;}
+  .step p{color:#9FB5CB;font-size:13.5px;}
+
+  /* ===== WHY US ===== */
+  .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
+  .why-card{
+    background:var(--white);border:1px solid var(--paper-line);border-radius:10px;
+    padding:28px 24px;transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .why-card:hover{transform:translateY(-6px);box-shadow:0 16px 30px rgba(10,37,64,.08);border-color:var(--amber);}
+  .why-card .ic{width:38px;height:38px;stroke:var(--amber-dark);margin-bottom:16px;}
+  .why-card h3{font-size:16px;margin-bottom:8px;}
+  .why-card p{font-size:13.5px;color:var(--steel);}
+
+  /* ===== CTA BANNER ===== */
+  .cta-band{
+    background:var(--amber);border-radius:14px;padding:54px 50px;
+    display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap;
+  }
+  .cta-band h2{font-size:clamp(24px,3vw,32px);color:var(--navy-deep);max-width:520px;}
+  .cta-band .btn-ghost{border-color:var(--navy-deep);color:var(--navy-deep);}
+  .cta-band .btn-ghost:hover{background:var(--navy-deep);color:var(--white);}
+
+  /* ===== CONTACT ===== */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;}
+  .contact-info .item{display:flex;gap:16px;margin-bottom:26px;}
+  .contact-info .ic{
+    width:42px;height:42px;border-radius:8px;background:var(--navy);flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .contact-info .ic svg{width:20px;height:20px;stroke:var(--white);}
+  .contact-info .item b{display:block;font-family:var(--font-head);font-size:14.5px;color:var(--navy);margin-bottom:3px;}
+  .contact-info .item span, .contact-info .item a{font-size:14px;color:var(--steel);}
+  .placeholder-tag{
+    display:inline-block;font-family:var(--font-mono);font-size:9.5px;letter-spacing:.06em;
+    background:#FFE7D6;color:var(--amber-dark);padding:2px 7px;border-radius:4px;margin-left:8px;vertical-align:middle;
+  }
+  form{background:var(--white);border:1px solid var(--paper-line);border-radius:12px;padding:32px;}
+  .f-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
+  label{font-family:var(--font-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--steel);display:block;margin-bottom:6px;}
+  input,select,textarea{
+    width:100%;padding:12px 14px;border:1.5px solid var(--paper-line);border-radius:6px;
+    font-family:var(--font-body);font-size:14px;color:var(--ink);background:var(--paper);
+    transition:border-color .2s ease;
+  }
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--amber);}
+  textarea{resize:vertical;min-height:90px;}
+  form .btn-primary{width:100%;justify-content:center;margin-top:6px;}
+
+  /* ===== FOOTER ===== */
+  footer{background:var(--navy-deep);color:#9FB5CB;padding:56px 0 26px;margin-top:40px;}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:36px;margin-bottom:40px;}
+  .foot-logo-row{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+  .foot-brand .name{font-family:var(--font-head);font-weight:800;color:var(--white);font-size:17px;}
+  .foot-brand p{font-size:13px;line-height:1.6;max-width:280px;}
+  footer h4{font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--amber);margin-bottom:16px;}
+  footer ul{list-style:none;}
+  footer li{margin-bottom:10px;font-size:13.5px;}
+  footer li a:hover{color:var(--white);}
+  .foot-bottom{
+    border-top:1px solid #17324D;padding-top:22px;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
+    font-family:var(--font-mono);font-size:11px;color:#5C7893;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width:900px){
+    .hero .wrap{grid-template-columns:1fr;}
+    .stamp-wrap{order:-1;max-width:200px;margin:0 auto 20px;}
+    .stats .wrap{grid-template-columns:repeat(2,1fr);gap:30px;}
+    .m-row{grid-template-columns:1fr;gap:8px;text-align:left;}
+    .m-icon{display:none;}
+    .steps{grid-template-columns:1fr;gap:34px;}
+    .steps::before{display:none;}
+    .why-grid{grid-template-columns:repeat(2,1fr);}
+    .contact-grid{grid-template-columns:1fr;}
+    .foot-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:680px){
+    .nav-links{
+      position:fixed;top:73px;left:0;right:0;background:var(--white);
+      flex-direction:column;padding:24px 28px;gap:20px;
+      transform:translateY(-120%);transition:transform .3s ease;
+      border-bottom:1px solid var(--paper-line);
+    }
+    .nav-links.open{transform:translateY(0);}
+    .nav-cta .btn-ghost{display:none;}
+    .burger{display:flex;}
+    .cta-band{flex-direction:column;text-align:center;}
+    .why-grid{grid-template-columns:1fr;}
+    .foot-grid{grid-template-columns:1fr;}
+    .f-row{grid-template-columns:1fr;}
+    .doc-frame{padding:26px 22px;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <div class="brand">
+        <!-- LOGO SLOT: drop a file named "logo.png" (or .svg/.jpg) in the same folder as this HTML file
+             and it will appear here automatically. Until then, the default mark below is shown. -->
+        <div class="brand-mark">
+          <img src="logo.png" alt="CarryFast Global Services logo" class="brand-logo-img"
+               onerror="this.style.display='none'; this.parentElement.classList.add('fallback');">
+          <svg class="brand-fallback-svg" viewBox="0 0 24 24" fill="none"><path d="M3 7l9-4 9 4-9 4-9-4z" stroke="#FF7A29" stroke-width="1.8" stroke-linejoin="round"/><path d="M3 7v10l9 4 9-4V7" stroke="#FFFFFF" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 11v10" stroke="#FF7A29" stroke-width="1.8"/></svg>
+        </div>
+        <div class="brand-text">
+          <span class="name">CARRYFAST GLOBAL</span>
+          <span class="sub">Services Pvt. Ltd. · CHA</span>
+        </div>
+      </div>
+      <div class="nav-links" id="navLinks">
+        <a href="#services">Services</a>
+        <a href="#process">Clearance Process</a>
+        <a href="#why">Why Us</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="nav-cta">
+        <a href="#contact" class="btn btn-ghost">Track Shipment</a>
+        <a href="#contact" class="btn btn-primary">Get a Quote</a>
+      </div>
+      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="doc-frame">
+      <div class="eyebrow">Licensed Customs House Agent · Est. India</div>
+      <h1>Full-circle logistics,<br>customs to <span class="accent">doorstep.</span></h1>
+      <p class="lead">CarryFast Global Services Pvt. Ltd. clears your cargo through customs, moves it by air or sea, stores it safely, and delivers it inland — one accountable partner from port to plant.</p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-primary">Get a Quote →</a>
+        <a href="#services" class="btn btn-ghost">Explore Services</a>
+      </div>
+      <div class="hero-meta">
+        <div><strong>Bonded</strong>Warehousing network</div>
+        <div><strong>Air · Sea</strong>Freight forwarding</div>
+        <div><strong>Pan-India</strong>Inland transport</div>
+      </div>
+    </div>
+
+    <div>
+      <div class="stamp-wrap">
+        <svg class="stamp" viewBox="0 0 220 220">
+          <circle cx="110" cy="110" r="98" fill="none" stroke="#C1272D" stroke-width="3"/>
+          <circle cx="110" cy="110" r="84" fill="none" stroke="#C1272D" stroke-width="1.5" stroke-dasharray="3 4"/>
+          <path id="topArc" d="M 32 110 A 78 78 0 0 1 188 110" fill="none"/>
+          <path id="botArc" d="M 40 148 A 78 78 0 0 0 180 148" fill="none"/>
+          <text font-family="IBM Plex Mono" font-size="12.5" font-weight="600" fill="#C1272D" letter-spacing="3">
+            <textPath href="#topArc" startOffset="50%" text-anchor="middle">CARRYFAST GLOBAL SERVICES</textPath>
+          </text>
+          <text font-family="IBM Plex Mono" font-size="11" font-weight="600" fill="#C1272D" letter-spacing="3">
+            <textPath href="#botArc" startOffset="50%" text-anchor="middle">CLEARED FOR CARRIAGE</textPath>
+          </text>
+          <g transform="translate(110,110)">
+            <circle r="34" fill="none" stroke="#C1272D" stroke-width="2"/>
+            <path d="M -14 0 L -4 12 L 16 -12" stroke="#C1272D" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
+        </svg>
+      </div>
+      <svg class="route-line" viewBox="0 0 300 40">
+        <circle cx="20" cy="20" r="5" fill="#1B4965"/>
+        <line class="dash" x1="25" y1="20" x2="140" y2="20" stroke="#1B4965" stroke-width="2"/>
+        <circle cx="150" cy="20" r="5" fill="#FF7A29"/>
+        <line class="dash" x1="160" y1="20" x2="275" y2="20" stroke="#1B4965" stroke-width="2"/>
+        <circle cx="280" cy="20" r="5" fill="#1B4965"/>
+        <text x="0" y="38" font-family="IBM Plex Mono" font-size="9" fill="#5C7893">JNPT MUMBAI</text>
+        <text x="120" y="38" font-family="IBM Plex Mono" font-size="9" fill="#5C7893">BONDED HUB</text>
+        <text x="248" y="38" font-family="IBM Plex Mono" font-size="9" fill="#5C7893">CONSIGNEE</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<div class="marquee-band">
+  <div class="marquee-track" id="marqueeTrack">
+    <span>JNPT — Nhava Sheva <b>ORIGIN</b></span>
+    <span>Mundra Port</span>
+    <span>Chennai Port</span>
+    <span>Cochin Port</span>
+    <span>Delhi ICD Tughlakabad</span>
+    <span>Bengaluru Air Cargo</span>
+    <span>HS Code Classification <b>SUPPORT</b></span>
+    <span>Bonded Warehousing</span>
+    <span>Door Delivery Pan-India</span>
+  </div>
+</div>
+
+<section class="stats">
+  <div class="wrap">
+    <div class="stat"><b>10,000+</b><span>Consignments cleared</span></div>
+    <div class="stat"><b>6</b><span>Major port &amp; ICD locations</span></div>
+    <div class="stat"><b>97.4%</b><span>On-time customs clearance</span></div>
+    <div class="stat"><b>24/7</b><span>Shipment desk support</span></div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Services Manifest</div>
+      <h2>Everything between the port and your premises.</h2>
+      <p>Four services, one point of contact. Each engagement is tracked against its own manifest code from filing to final-mile delivery.</p>
+    </div>
+
+    <div class="manifest reveal">
+      <div class="m-head">Code · Service · Coverage · —</div>
+      <div class="m-row">
+        <span class="m-code">CHA-01</span>
+        <span class="m-name">Customs Clearance</span>
+        <span class="m-desc">Import/export documentation, HS classification, duty assessment and liaison with customs authorities for import & export consignments.</span>
+        <span class="m-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9" stroke-width="2"/></svg></span>
+      </div>
+      <div class="m-row">
+        <span class="m-code">FRT-02</span>
+        <span class="m-name">Freight Forwarding</span>
+        <span class="m-desc">Air and sea freight booking, FCL/LCL consolidation, and carrier coordination across major Indian and international routes.</span>
+        <span class="m-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M3 7l9-4 9 4-9 4-9-4z" stroke-width="2" stroke-linejoin="round"/><path d="M3 7v10l9 4 9-4V7" stroke-width="2" stroke-linejoin="round"/></svg></span>
+      </div>
+      <div class="m-row">
+        <span class="m-code">WHS-03</span>
+        <span class="m-name">Warehousing &amp; Bonded Storage</span>
+        <span class="m-desc">Short and long-term storage, bonded warehousing for duty-deferred cargo, and inventory handling near key port zones.</span>
+        <span class="m-icon"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="9" width="18" height="11" stroke-width="2"/><path d="M3 9l9-6 9 6" stroke-width="2" stroke-linejoin="round"/></svg></span>
+      </div>
+      <div class="m-row">
+        <span class="m-code">TRP-04</span>
+        <span class="m-name">Inland Transportation</span>
+        <span class="m-desc">Port-to-door and hub-to-hub trucking with a pan-India fleet network and real-time consignment tracking.</span>
+        <span class="m-icon"><svg viewBox="0 0 24 24" fill="none"><rect x="1" y="7" width="14" height="10" stroke-width="2"/><path d="M15 10h4l3 3v4h-7z" stroke-width="2" stroke-linejoin="round"/><circle cx="6" cy="19" r="1.6" stroke-width="1.6"/><circle cx="17" cy="19" r="1.6" stroke-width="1.6"/></svg></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="wrap">
+    <div class="process-wrap reveal">
+      <div class="sec-head">
+        <div class="eyebrow">How Clearance Works</div>
+        <h2>Four stages, start to finish.</h2>
+        <p>The same sequence runs behind every consignment we handle — visible to you at each step.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="num">01</div>
+          <h3>Document Filing</h3>
+          <p>Bill of entry / shipping bill, invoice and packing list are filed and matched against cargo details.</p>
+        </div>
+        <div class="step">
+          <div class="num">02</div>
+          <h3>Assessment &amp; Duty</h3>
+          <p>HS classification is verified, duty is assessed, and payment is coordinated on your behalf.</p>
+        </div>
+        <div class="step">
+          <div class="num">03</div>
+          <h3>Examination</h3>
+          <p>Cargo is presented for customs examination where applicable, with our team on-site to resolve queries.</p>
+        </div>
+        <div class="step">
+          <div class="num">04</div>
+          <h3>Clearance &amp; Delivery</h3>
+          <p>Out-of-charge is obtained and cargo moves to warehousing or directly to final-mile delivery.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Why CarryFast</div>
+      <h2>Built for shippers who can't afford delays.</h2>
+    </div>
+    <div class="why-grid reveal">
+      <div class="why-card">
+        <svg class="ic" viewBox="0 0 24 24" fill="none"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z" stroke-width="1.8" stroke-linejoin="round"/></svg>
+        <h3>Licensed &amp; Compliant</h3>
+        <p>Operating as a registered Customs House Agent with documentation aligned to current customs regulations.</p>
+      </div>
+      <div class="why-card">
+        <svg class="ic" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke-width="1.8"/><path d="M12 7v5l3 3" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <h3>24/7 Shipment Desk</h3>
+        <p>A dedicated desk tracks every active consignment and flags exceptions before they cause delays.</p>
+      </div>
+      <div class="why-card">
+        <svg class="ic" viewBox="0 0 24 24" fill="none"><path d="M3 12h18M12 3v18" stroke-width="1.8"/><circle cx="12" cy="12" r="9" stroke-width="1.8"/></svg>
+        <h3>Pan-India Network</h3>
+        <p>Coverage across major ports, air cargo terminals and inland container depots nationwide.</p>
+      </div>
+      <div class="why-card">
+        <svg class="ic" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="16" rx="2" stroke-width="1.8"/><path d="M8 2v4M16 2v4M3 10h18" stroke-width="1.8"/></svg>
+        <h3>Transparent Tracking</h3>
+        <p>Every consignment carries a manifest code you can reference for status at any stage of the process.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="cta-band reveal">
+      <h2>Have a shipment that needs to move? Let's talk timelines and duty impact.</h2>
+      <a href="#contact" class="btn btn-ghost">Request a Callback →</a>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Get In Touch</div>
+      <h2>Tell us about your consignment.</h2>
+      <p>Reach the shipment desk directly, or send details through the form and we'll respond with a quote.</p>
+    </div>
+    <div class="contact-grid reveal">
+      <div class="contact-info">
+        <div class="item">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 2 2.3z" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
+          <div><b>Shipment Desk<span class="placeholder-tag">EDIT ME</span></b><a href="tel:+911234567890">+91 12345 67890</a></div>
+        </div>
+        <div class="item">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M4 4h16v16H4z" stroke-width="1.8"/><path d="M4 6l8 7 8-7" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
+          <div><b>Email<span class="placeholder-tag">EDIT ME</span></b><a href="mailto:ops@carryfastglobal.example">ops@carryfastglobal.example</a></div>
+        </div>
+        <div class="item">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.3 7-12a7 7 0 1 0-14 0c0 5.7 7 12 7 12z" stroke-width="1.8"/><circle cx="12" cy="9" r="2.4" stroke-width="1.8"/></svg></div>
+          <div><b>Registered Office<span class="placeholder-tag">EDIT ME</span></b><span>Plot 000, Logistics Park Road, Near JNPT, Navi Mumbai, Maharashtra 400000</span></div>
+        </div>
+        <div class="item">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="16" rx="2" stroke-width="1.8"/><path d="M3 9h18" stroke-width="1.8"/></svg></div>
+          <div><b>Registration<span class="placeholder-tag">EDIT ME</span></b><span>CIN: U00000MH2026PTC000000 · GSTIN: 27XXXXX0000X1ZX · IEC: 0000000000</span></div>
+        </div>
+      </div>
+
+      <form id="quoteForm">
+        <div class="f-row">
+          <div><label>Full Name</label><input type="text" name="name" placeholder="Your name" required></div>
+          <div><label>Company</label><input type="text" name="company" placeholder="Company name"></div>
+        </div>
+        <div class="f-row">
+          <div><label>Email</label><input type="email" name="email" placeholder="you@company.com" required></div>
+          <div><label>Phone</label><input type="tel" name="phone" placeholder="+91"></div>
+        </div>
+        <div class="f-row">
+          <div><label>Service Needed</label>
+            <select name="service">
+              <option>Customs Clearance</option>
+              <option>Freight Forwarding</option>
+              <option>Warehousing &amp; Bonded Storage</option>
+              <option>Inland Transportation</option>
+              <option>Full Door-to-Door</option>
+              <option>Not sure — advise me</option>
+            </select>
+          </div>
+          <div><label>Import or Export</label>
+            <select name="direction">
+              <option>Import</option>
+              <option>Export</option>
+              <option>Domestic movement only</option>
+            </select>
+          </div>
+        </div>
+        <div class="f-row">
+          <div><label>Origin</label><input type="text" name="origin" placeholder="City / Port of origin"></div>
+          <div><label>Destination</label><input type="text" name="destination" placeholder="City / Port of destination"></div>
+        </div>
+        <div class="f-row">
+          <div><label>Cargo Type</label><input type="text" name="cargo_type" placeholder="e.g. machinery, textiles, chemicals"></div>
+          <div><label>Approx. Weight / Volume</label><input type="text" name="volume" placeholder="e.g. 2 tons / 1 FCL 20ft"></div>
+        </div>
+        <div style="margin-bottom:16px;">
+          <label>Preferred Timeline</label>
+          <input type="text" name="timeline" placeholder="e.g. within 2 weeks, recurring monthly shipment">
+        </div>
+        <div style="margin-bottom:6px;">
+          <label>Additional Details</label>
+          <textarea name="message" placeholder="Anything else that helps us quote accurately — Incoterms, special handling, prior clearance history, etc."></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit" id="quoteSubmitBtn">Send Enquiry →</button>
+        <p id="formStatus" style="margin-top:14px;font-size:13.5px;color:var(--steel);display:none;"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="foot-logo-row">
+          <div class="brand-mark">
+            <img src="logo.png" alt="CarryFast Global Services logo" class="brand-logo-img"
+                 onerror="this.style.display='none'; this.parentElement.classList.add('fallback');">
+            <svg class="brand-fallback-svg" viewBox="0 0 24 24" fill="none"><path d="M3 7l9-4 9 4-9 4-9-4z" stroke="#FF7A29" stroke-width="1.8" stroke-linejoin="round"/><path d="M3 7v10l9 4 9-4V7" stroke="#FFFFFF" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 11v10" stroke="#FF7A29" stroke-width="1.8"/></svg>
+          </div>
+          <div class="name">CARRYFAST GLOBAL SERVICES PVT. LTD.</div>
+        </div>
+        <p>Licensed Customs House Agent providing customs clearance, freight forwarding, bonded warehousing and inland transportation across India.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Customs Clearance</a></li>
+          <li><a href="#services">Freight Forwarding</a></li>
+          <li><a href="#services">Warehousing</a></li>
+          <li><a href="#services">Inland Transport</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#why">Why Us</a></li>
+          <li><a href="#process">Clearance Process</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Registered Info<span class="placeholder-tag">EDIT ME</span></h4>
+        <ul>
+          <li>CIN: U00000MH2026PTC000000</li>
+          <li>GSTIN: 27XXXXX0000X1ZX</li>
+          <li>IEC Code: 0000000000</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 CarryFast Global Services Pvt. Ltd. All rights reserved.</span>
+      <span>Placeholder content — replace before going live.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ===== QUOTE FORM SUBMISSION =====
+  // This form sends entries to your email via Formspree (a free form-backend service).
+  // SETUP REQUIRED — the form will NOT reach you until you do this:
+  //   1. Go to https://formspree.io and sign up free with your real email.
+  //   2. Create a new form, verify the confirmation email Formspree sends you.
+  //   3. Copy the endpoint URL it gives you (looks like https://formspree.io/f/abcdwxyz)
+  //   4. Paste it below, replacing YOUR_FORMSPREE_ENDPOINT_HERE.
+  const FORM_ENDPOINT = "https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT_HERE";
+
+  const quoteForm = document.getElementById('quoteForm');
+  const formStatus = document.getElementById('formStatus');
+  const submitBtn = document.getElementById('quoteSubmitBtn');
+
+  quoteForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    if (FORM_ENDPOINT.includes('YOUR_FORMSPREE_ENDPOINT_HERE')) {
+      formStatus.style.display = 'block';
+      formStatus.style.color = '#C1272D';
+      formStatus.textContent = 'Form not connected yet — the site owner needs to add a Formspree endpoint (see comment in the code) before this form can deliver enquiries.';
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+    formStatus.style.display = 'none';
+
+    try {
+      const res = await fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(quoteForm)
+      });
+      if (res.ok) {
+        quoteForm.reset();
+        formStatus.style.display = 'block';
+        formStatus.style.color = '#1B4965';
+        formStatus.textContent = 'Enquiry sent — we\'ll get back to you shortly with a quote.';
+      } else {
+        throw new Error('Submission failed');
+      }
+    } catch (err) {
+      formStatus.style.display = 'block';
+      formStatus.style.color = '#C1272D';
+      formStatus.textContent = 'Something went wrong sending this. Please try again, or email us directly.';
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send Enquiry →';
+    }
+  });
+
+  // duplicate marquee content for seamless loop
+  const track = document.getElementById('marqueeTrack');
+  track.innerHTML += track.innerHTML;
+
+  // mobile nav toggle
+  const burger = document.getElementById('burger');
+  const navLinks = document.getElementById('navLinks');
+  burger.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+  // scroll reveal
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
